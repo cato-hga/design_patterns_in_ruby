@@ -20,7 +20,9 @@ class Report
   end
 
   def output_start
-    raise 'Called abstract method: output_start'
+    # instead of raising a message, we can default this method as empty.
+    # The reason for this is because not all subclasses require a value for this method
+    # ex: PlainTextReport
   end
 
   def output_head
@@ -28,7 +30,6 @@ class Report
   end
 
   def output_body_start
-    raise 'Called abstract method: output_body_start'
   end
 
   def output_line(line)
@@ -36,10 +37,8 @@ class Report
   end
 
   def output_body_end
-    raise 'Called abstract method: output_body_end'
   end
 
   def output_end
-    raise 'Called abstract method: output_end'
   end
 end
