@@ -26,7 +26,10 @@ class Report
   end
 
   def output_head
-    raise 'Called abstract method: output_head'
+    # sometimes, the default implementation of a hook method may actually
+	  # contain some code. For example. we might default to treating the title like
+	  # just another line of text:
+    output_line(@title)
   end
 
   def output_body_start
