@@ -1,8 +1,8 @@
 # Here's the formatter for plain text:
-class PlainTextFormatter < Formatter
-  def output_report(title, text)
-    puts("**** #{title} ****")
-    text.each do |line|
+class PlainTextFormatter
+  def output_report(context)
+    puts("**** #{context.title} ****")
+    context.text.each do |line|
       puts(line)
     end
   end
